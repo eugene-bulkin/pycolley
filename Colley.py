@@ -4,7 +4,7 @@ from scipy.special import binom
 
 class ColleyError(Exception):
   pass
-  
+
 class Colley:
   def __init__(self, games):
     self.games = games
@@ -27,6 +27,7 @@ class Colley:
     A = 2 * np.eye(len(teams))
     b = np.ones(shape=(len(teams), 1))
     for game in self.games:
+      # Assumes that the format is TEAM1,SCORE1,TEAM2,SCORE2,NOTES
       tm1, sc1, tm2, sc2, notes = game
       sc1, sc2 = int(sc1), int(sc2)
       winner = tm1 if sc1 > sc2 else tm2
