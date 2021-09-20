@@ -1,6 +1,7 @@
 import numpy as np
 from numpy.linalg import inv
 from scipy.special import binom
+from functools import reduce
 
 class ColleyError(Exception):
   pass
